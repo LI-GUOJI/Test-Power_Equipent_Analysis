@@ -495,3 +495,22 @@ def detect_anomalous_devices(df, vibration_cols=None, threshold_std=2.0):
                 anomalous_devices[col] = anomalous['device_id'].tolist()
     
     return anomalous_devices
+
+def check_temperature_alert(temperature, warning_threshold=75, critical_threshold=85):
+    """
+    检查设备温度并返回预警等级。
+    
+    参数:
+        temperature (float): 当前温度值
+        warning_threshold (float): 警告阈值
+        critical_threshold (float): 严重警告阈值
+        
+    返回:
+        str: 'normal', 'warning', 'critical'
+    """
+    if temperature >= critical_threshold:
+        return "critical"
+    elif temperature >= warning_threshold:
+        return "warning"
+    else:
+        return "normal"
