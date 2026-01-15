@@ -10,6 +10,7 @@ import seaborn as sns
 from scipy import stats
 import warnings
 warnings.filterwarnings('ignore')  # 忽略警告信息，保持输出整洁
+#[注意]如果VS Code的虚拟环境与Jupyter不同时，外部库会以波浪线显示。
 
 # 设置中文显示和绘图风格
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
